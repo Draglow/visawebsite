@@ -1,0 +1,20 @@
+# EthioGlobal Static Website - No Dependencies Required!
+# 
+# This is now a pure static HTML/CSS/JavaScript website with EmailJS integration.
+# No Python packages or backend dependencies are needed.
+#
+# To run the website:
+# 1. Serve static files using any web server:
+#    - Python: python -m http.server 8000
+#    - Node.js: npx http-server
+#    - Upload to any static hosting service (GitHub Pages, Netlify, Vercel, etc.)
+#
+# 2. Configure EmailJS (see EMAILJS_SETUP_GUIDE.md)
+#
+# External dependencies (loaded via CDN):
+# - Bootstrap 5.3.0 (CSS framework)
+# - Font Awesome 6.4.0 (icons)
+# - Google Fonts Inter (typography)
+# - EmailJS 3.x (email service)
+#
+# No local installation required!

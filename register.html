@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Registration - Ethiopian Visa Registration</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.png">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-mobile" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand magical-hover sparkle" href="index.html">
+                <svg class="ethiopian-map-logo" width="42" height="42" viewBox="0 0 100 100" fill="none">
+                    <rect x="10" y="20" width="80" height="60" rx="8" fill="url(#ethiopianGradient)" stroke="#006B3C" stroke-width="1"/>
+                    <rect x="20" y="30" width="25" height="18" rx="2" fill="#1a365d" opacity="0.9"/>
+                    <rect x="22" y="32" width="21" height="14" rx="1" fill="white"/>
+                    <circle cx="27" cy="37" r="3" fill="#FFD700"/>
+                    <path class="airplane-route" d="M50 35 L70 25 L72 27 L70 30 L75 32 L73 34 L68 32 L65 38 L50 35 Z" fill="#DA020E" opacity="0.8"/>
+                    <defs>
+                        <linearGradient id="ethiopianGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00843D;stop-opacity:0.3" />
+                            <stop offset="33%" style="stop-color:#FFD700;stop-opacity:0.3" />
+                            <stop offset="66%" style="stop-color:#DA020E;stop-opacity:0.3" />
+                            <stop offset="100%" style="stop-color:#00843D;stop-opacity:0.3" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="brand-text">EthioGlobal</span>
+            </a>
+            
+            <div class="navbar-nav">
+                <a class="btn btn-outline-primary" href="index.html">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="registration-section py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="registration-header text-center mb-5">
+                            <h1 class="registration-title">Visa Registration</h1>
+                            <p class="registration-subtitle">Fill out the form below to start your visa application process</p>
+                        </div>
+                        
+                        <div class="registration-form-container">
+                            <div class="card shadow-lg border-0">
+                                <div class="card-body p-5">
+                                    <!-- Success/Error Messages -->
+                                    <div id="alertContainer"></div>
+                                    
+                                    <form id="registrationForm">
+                                        <!-- Personal Information Section -->
+                                        <div class="form-section mb-4">
+                                            <h3 class="form-section-title">
+                                                <i class="fas fa-user me-2"></i>Personal Information
+                                            </h3>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="full_name" class="form-label">
+                                                        Full Name / ሙሉ ስም <span class="text-danger">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="full_name" name="full_name" required 
+                                                           placeholder="Enter your full name">
+                                                </div>
+                                                
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="email" class="form-label">
+                                                        Email Address / ኢሜይል አድራሻ <span class="text-danger">*</span>
+                                                    </label>
+                                                    <input type="email" class="form-control" id="email" name="email" required 
+                                                           placeholder="Enter your email address">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="phone_number" class="form-label">
+                                                        Phone Number / ሰልክ ቅጠር <span class="text-danger">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="phone_number" name="phone_number" required 
+                                                           placeholder="Enter your phone number">
+                                                </div>
+                                                
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="date_of_birth" class="form-label">
+                                                        Date of Birth / የተወልድ ቀን <span class="text-danger">*</span>
+                                                    </label>
+                                                    <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="gender" class="form-label">
+                                                        Gender / ሰሓላ <span class="text-danger">*</span>
+                                                    </label>
+                                                    <select class="form-control" id="gender" name="gender" required>
+                                                        <option value="">Select Gender</option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                        <option value="Other">Other</option>
+                                                    </select>
+                                                </div>
+                                                
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="marital_status" class="form-label">
+                                                        Marital Status / የገባት ሜና <span class="text-danger">*</span>
+                                                    </label>
+                                                    <select class="form-control" id="marital_status" name="marital_status" required>
+                                                        <option value="">Select Status</option>
+                                                        <option value="Single">Single</option>
+                                                        <option value="Married">Married</option>
+                                                        <option value="Divorced">Divorced</option>
+                                                        <option value="Widowed">Widowed</option>
+                                                    </select>
+                                                </div>
+                                                
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="nationality" class="form-label">
+                                                        Nationality / ብሄራዊነት <span class="text-danger">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="nationality" name="nationality" 
+                                                           value="Ethiopian" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Passport Information Section -->
+                                        <div class="form-section mb-4">
+                                            <h3 class="form-section-title">
+                                                <i class="fas fa-passport me-2"></i>Passport Information / የፓስፖርት መረጃ
+                                            </h3>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="passport_number" class="form-label">
+                                                        Passport Number / የፓስፖርት ቅጠር <span class="text-danger">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="passport_number" name="passport_number" required 
+                                                           placeholder="Enter passport number">
+                                                </div>
+                                                
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="passport_issue_date" class="form-label">
+                                                        Issue Date / የተሰጣ ቀን <span class="text-danger">*</span>
+                                                    </label>
+                                                    <input type="date" class="form-control" id="passport_issue_date" name="passport_issue_date" required>
+                                                </div>
+                                                
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="passport_expiry_date" class="form-label">
+                                                        Expiry Date / የሚቀጣ ቀን <span class="text-danger">*</span>
+                                                    </label>
+                                                    <input type="date" class="form-control" id="passport_expiry_date" name="passport_expiry_date" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Visa Information Section -->
+                                        <div class="form-section mb-4">
+                                            <h3 class="form-section-title">
+                                                <i class="fas fa-globe me-2"></i>Visa & Employment Information / የቪዛ እና የስራ መረጃ
+                                            </h3>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="desired_country" class="form-label">
+                                                        Desired Country / የሚፈልጉ ሀገር <span class="text-danger">*</span>
+                                                    </label>
+                                                    <select class="form-control" id="desired_country" name="desired_country" required>
+                                                        <option value="">Select Country</option>
+                                                        <option value="USA">United States</option>
+                                                        <option value="Canada">Canada</option>
+                                                        <option value="Saudi Arabia">Saudi Arabia</option>
+                                                        <option value="UAE">United Arab Emirates</option>
+                                                        <option value="Germany">Germany</option>
+                                                        <option value="UK">United Kingdom</option>
+                                                    </select>
+                                                </div>
+                                                
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="job_category" class="form-label">
+                                                        Job Category / የስራ ዓይነት <span class="text-danger">*</span>
+                                                    </label>
+                                                    <select class="form-control" id="job_category" name="job_category" required>
+                                                        <option value="">Select Category</option>
+                                                        <option value="Healthcare">Healthcare</option>
+                                                        <option value="Construction">Construction</option>
+                                                        <option value="IT">Information Technology</option>
+                                                        <option value="Domestic Work">Domestic Work</option>
+                                                        <option value="Engineering">Engineering</option>
+                                                        <option value="Hospitality">Hospitality</option>
+                                                        <option value="Education">Education</option>
+                                                        <option value="Other">Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="education_level" class="form-label">
+                                                        Education Level / የትምሕርት ደረጃ <span class="text-danger">*</span>
+                                                    </label>
+                                                    <select class="form-control" id="education_level" name="education_level" required>
+                                                        <option value="">Select Level</option>
+                                                        <option value="High School">High School</option>
+                                                        <option value="Diploma">Diploma</option>
+                                                        <option value="Bachelor Degree">Bachelor Degree</option>
+                                                        <option value="Master Degree">Master Degree</option>
+                                                        <option value="PhD">PhD</option>
+                                                        <option value="Other">Other</option>
+                                                    </select>
+                                                </div>
+                                                
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="work_experience" class="form-label">
+                                                        Work Experience / የስራ ምድራ <span class="text-danger">*</span>
+                                                    </label>
+                                                    <select class="form-control" id="work_experience" name="work_experience" required>
+                                                        <option value="">Select Experience</option>
+                                                        <option value="0-1 years">0-1 years</option>
+                                                        <option value="2-3 years">2-3 years</option>
+                                                        <option value="4-5 years">4-5 years</option>
+                                                        <option value="6-10 years">6-10 years</option>
+                                                        <option value="10+ years">10+ years</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="current_occupation" class="form-label">
+                                                        Current Occupation / ባሉ ስራ
+                                                    </label>
+                                                    <input type="text" class="form-control" id="current_occupation" name="current_occupation" 
+                                                           placeholder="Enter current occupation">
+                                                </div>
+                                                
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="expected_salary" class="form-label">
+                                                        Expected Salary Range / የሚፈልጉ የጀነብ ምልካሽ
+                                                    </label>
+                                                    <input type="text" class="form-control" id="expected_salary" name="expected_salary" 
+                                                           placeholder="Enter expected salary range">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <label for="language_skills" class="form-label">
+                                                    Language Skills / የቅባ ክልላቶች
+                                                </label>
+                                                <textarea class="form-control" id="language_skills" name="language_skills" rows="3" 
+                                                          placeholder="List languages you speak (e.g., Amharic, English, Arabic)"></textarea>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Emergency Contact Section -->
+                                        <div class="form-section mb-4">
+                                            <h3 class="form-section-title">
+                                                <i class="fas fa-phone-alt me-2"></i>Emergency Contact / የአድራሻ እርዳታ
+                                            </h3>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="emergency_contact_name" class="form-label">
+                                                        Contact Name / የአድራሻ ስም <span class="text-danger">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="emergency_contact_name" name="emergency_contact_name" required 
+                                                           placeholder="Enter emergency contact name">
+                                                </div>
+                                                
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="emergency_contact_phone" class="form-label">
+                                                        Contact Phone / የአድራሻ ሰልክ <span class="text-danger">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="emergency_contact_phone" name="emergency_contact_phone" required 
+                                                           placeholder="Enter emergency contact phone">
+                                                </div>
+                                                
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="emergency_contact_relationship" class="form-label">
+                                                        Relationship / የበተተብ ዳንባራ <span class="text-danger">*</span>
+                                                    </label>
+                                                    <input type="text" class="form-control" id="emergency_contact_relationship" name="emergency_contact_relationship" required 
+                                                           placeholder="e.g., Father, Mother, Spouse">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Additional Information Section -->
+                                        <div class="form-section mb-4">
+                                            <h3 class="form-section-title">
+                                                <i class="fas fa-info-circle me-2"></i>Additional Information / ተመሳባር መረጃ
+                                            </h3>
+                                            
+                                            <div class="mb-3">
+                                                <label for="additional_notes" class="form-label">
+                                                    Additional Notes / ተመሳባር መስመር
+                                                </label>
+                                                <textarea class="form-control" id="additional_notes" name="additional_notes" rows="4" 
+                                                          placeholder="Any additional information that might help with your visa application"></textarea>
+                                                <small class="form-text text-muted">Any additional information that might help with your visa application.</small>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Terms and Conditions -->
+                                        <div class="form-check mb-4">
+                                            <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                            <label class="form-check-label" for="termsCheck">
+                                                I agree that the information provided is accurate and I consent to the processing of my personal data for visa application purposes. <span class="text-danger">*</span>
+                                            </label>
+                                        </div>
+                                        
+                                        <!-- Submit Button -->
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary btn-lg px-5" id="submitButton">
+                                                <i class="fas fa-paper-plane me-2"></i>Submit Application
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <script src="static/js/emailjs-config.js"></script>
+</body>
+</html>
