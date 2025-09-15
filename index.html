@@ -28,17 +28,17 @@
         <div class="container">
             <a class="navbar-brand magical-hover sparkle" href="index.html">
                 <svg class="ethiopian-map-logo" width="42" height="42" viewBox="0 0 100 100" fill="none">
-                    <rect x="10" y="20" width="80" height="60" rx="8" fill="url(#ethiopianGradient)" stroke="#006B3C" stroke-width="1"/>
-                    <rect x="20" y="30" width="25" height="18" rx="2" fill="#1a365d" opacity="0.9"/>
+                    <rect x="10" y="20" width="80" height="60" rx="8" fill="url(#greenGradient)" stroke="#10b981" stroke-width="2"/>
+                    <rect x="20" y="30" width="25" height="18" rx="2" fill="#047857" opacity="0.9"/>
                     <rect x="22" y="32" width="21" height="14" rx="1" fill="white"/>
-                    <circle cx="27" cy="37" r="3" fill="#FFD700"/>
-                    <path class="airplane-route" d="M50 35 L70 25 L72 27 L70 30 L75 32 L73 34 L68 32 L65 38 L50 35 Z" fill="#DA020E" opacity="0.8"/>
+                    <circle cx="27" cy="37" r="3" fill="#10b981"/>
+                    <path class="airplane-route" d="M50 35 L70 25 L72 27 L70 30 L75 32 L73 34 L68 32 L65 38 L50 35 Z" fill="#059669" opacity="0.9"/>
                     <defs>
-                        <linearGradient id="ethiopianGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#00843D;stop-opacity:0.3" />
-                            <stop offset="33%" style="stop-color:#FFD700;stop-opacity:0.3" />
-                            <stop offset="66%" style="stop-color:#DA020E;stop-opacity:0.3" />
-                            <stop offset="100%" style="stop-color:#00843D;stop-opacity:0.3" />
+                        <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.4" />
+                            <stop offset="33%" style="stop-color:#059669;stop-opacity:0.4" />
+                            <stop offset="66%" style="stop-color:#047857;stop-opacity:0.4" />
+                            <stop offset="100%" style="stop-color:#065f46;stop-opacity:0.4" />
                         </linearGradient>
                     </defs>
                 </svg>
@@ -81,46 +81,65 @@
     <main>
         <!-- Hero Section -->
         <section class="hero-section mt-lg-5">
+            <div class="hero-background-overlay"></div>
+            <div class="hero-particles"></div>
             <div class="container">
                 <div class="row align-items-center min-vh-75">
                     <div class="col-lg-7 col-md-12">
                         <div class="hero-content">
-                            <div class="hero-badge">
-                                <span class="flag-badge">🇪🇹</span>
-                                <span class="badge-text">የኢትዮጵያ ቪዛ አገልግሎት</span>
-                                <span class="badge-text-en">Ethiopian Visa Services</span>
-                            </div>
-                            <h1 class="hero-title-amharic">ለውጭ ሀገር ሥራ ምርጥ እድል አግኙ</h1>
-                            <h2 class="hero-title">Find Your Dream Job Abroad</h2>
-                            <p class="hero-subtitle">Join thousands of Ethiopians who have found great opportunities worldwide. Professional visa assistance with cultural understanding and dedicated support.</p>
-                            <div class="hero-stats">
-                                <div class="hero-stat">
-                                    <span class="stat-number">2000+</span>
-                                    <span class="stat-label">Ethiopians Helped</span>
-                                </div>
-                                <div class="hero-stat">
-                                    <span class="stat-number">15+</span>
-                                    <span class="stat-label">Countries</span>
-                                </div>
-                                <div class="hero-stat">
-                                    <span class="stat-number">95%</span>
-                                    <span class="stat-label">Success Rate</span>
+                            <div class="hero-badge-enhanced">
+                                <span class="flag-badge-glow">🇪🇹</span>
+                                <div class="badge-text-group">
+                                    <span class="badge-text-amharic">የኢትዮጵያ ቪዛ አገልግሎት</span>
+                                    <span class="badge-text-en">Ethiopian Visa Services</span>
                                 </div>
                             </div>
-                            <div class="hero-actions">
-                                <a href="register.html" class="btn btn-primary btn-lg">
+                            <h1 class="hero-title-amharic-enhanced">ለውጭ ሀገር ሥራ ምርጥ እድል አግኙ</h1>
+                            <h2 class="hero-title-enhanced">Find Your Dream Job Abroad</h2>
+                            <p class="hero-subtitle-enhanced">Join thousands of Ethiopians who have found great opportunities worldwide. Professional visa assistance with cultural understanding and dedicated support.</p>
+                            <div class="hero-stats-enhanced">
+                                <div class="hero-stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <span class="stat-number-enhanced">2000+</span>
+                                    <span class="stat-label-enhanced">Ethiopians Helped</span>
+                                </div>
+                                <div class="hero-stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-globe-americas"></i>
+                                    </div>
+                                    <span class="stat-number-enhanced">15+</span>
+                                    <span class="stat-label-enhanced">Countries</span>
+                                </div>
+                                <div class="hero-stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <span class="stat-number-enhanced">95%</span>
+                                    <span class="stat-label-enhanced">Success Rate</span>
+                                </div>
+                            </div>
+                            <div class="hero-actions-enhanced">
+                                <a href="register.html" class="btn btn-primary-enhanced btn-lg">
                                     <i class="fas fa-rocket me-2"></i>Apply Now
+                                    <div class="btn-glow"></div>
                                 </a>
-                                <a href="#countries" class="btn btn-outline-primary btn-lg">
+                                <a href="#countries" class="btn btn-outline-enhanced btn-lg">
                                     <i class="fas fa-globe me-2"></i>Browse Countries
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-12">
-                        <div class="hero-image">
-                            <div class="hero-card-large">
+                        <div class="hero-image-enhanced">
+                            <div class="hero-card-floating">
                                 <img src="static/image/map.jfif" alt="Hero Card Large" class="img-fluid">
+                                <div class="floating-elements">
+                                    <div class="floating-element">✈️</div>
+                                    <div class="floating-element">🌍</div>
+                                    <div class="floating-element">💼</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -427,17 +446,17 @@
                     <div class="footer-brand">
                         <a class="navbar-brand text-light mb-3 d-flex align-items-center" href="index.html">
                             <svg class="ethiopian-map-logo me-2" width="32" height="32" viewBox="0 0 100 100" fill="none">
-                                <rect x="10" y="20" width="80" height="60" rx="8" fill="url(#ethiopianGradientFooter)" stroke="#10b981" stroke-width="1"/>
-                                <rect x="20" y="30" width="25" height="18" rx="2" fill="#1a365d" opacity="0.9"/>
+                                <rect x="10" y="20" width="80" height="60" rx="8" fill="url(#greenGradientFooter)" stroke="#10b981" stroke-width="2"/>
+                                <rect x="20" y="30" width="25" height="18" rx="2" fill="#047857" opacity="0.9"/>
                                 <rect x="22" y="32" width="21" height="14" rx="1" fill="white"/>
-                                <circle cx="27" cy="37" r="3" fill="#FFD700"/>
-                                <path class="airplane-route" d="M50 35 L70 25 L72 27 L70 30 L75 32 L73 34 L68 32 L65 38 L50 35 Z" fill="#DA020E" opacity="0.8"/>
+                                <circle cx="27" cy="37" r="3" fill="#10b981"/>
+                                <path class="airplane-route" d="M50 35 L70 25 L72 27 L70 30 L75 32 L73 34 L68 32 L65 38 L50 35 Z" fill="#059669" opacity="0.9"/>
                                 <defs>
-                                    <linearGradient id="ethiopianGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#00843D;stop-opacity:0.3" />
-                                        <stop offset="33%" style="stop-color:#FFD700;stop-opacity:0.3" />
-                                        <stop offset="66%" style="stop-color:#DA020E;stop-opacity:0.3" />
-                                        <stop offset="100%" style="stop-color:#00843D;stop-opacity:0.3" />
+                                    <linearGradient id="greenGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.4" />
+                                        <stop offset="33%" style="stop-color:#059669;stop-opacity:0.4" />
+                                        <stop offset="66%" style="stop-color:#047857;stop-opacity:0.4" />
+                                        <stop offset="100%" style="stop-color:#065f46;stop-opacity:0.4" />
                                     </linearGradient>
                                 </defs>
                             </svg>
