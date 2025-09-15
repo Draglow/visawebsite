@@ -106,7 +106,7 @@ function initParticleSystem() {
  */
 function initMobileNavigation() {
     const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navbarCollapse = document.querySelector('#navbarNav');
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
     const body = document.body;
     
@@ -120,9 +120,11 @@ function initMobileNavigation() {
         document.body.appendChild(mobileOverlay);
     }
     
+    // Initialize Bootstrap Collapse
+    const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+    
     // Close mobile menu when clicking on overlay
     mobileOverlay.addEventListener('click', function() {
-        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
         bsCollapse.hide();
     });
     
@@ -132,7 +134,6 @@ function initMobileNavigation() {
         const isNavOpen = navbarCollapse.classList.contains('show');
         
         if (!isClickInsideNav && isNavOpen && window.innerWidth <= 991) {
-            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
             bsCollapse.hide();
         }
     });
@@ -145,9 +146,23 @@ function initMobileNavigation() {
             if (isNavOpen && window.innerWidth <= 991) {
                 // Add a small delay to allow for smooth transition before closing
                 setTimeout(() => {
-                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
                     bsCollapse.hide();
                 }, 150);
+                
+                // If it's an anchor link, handle smooth scrolling
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    setTimeout(() => {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ 
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }, 300); // Wait for menu to close
+                }
             }
         });
     });
@@ -157,13 +172,33 @@ function initMobileNavigation() {
         if (e.key === 'Escape') {
             const isNavOpen = navbarCollapse.classList.contains('show');
             if (isNavOpen && window.innerWidth <= 991) {
-                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
                 bsCollapse.hide();
+            }
+        }
+        
+        // Handle Tab key for focus trapping when mobile menu is open
+        if (e.key === 'Tab' && navbarCollapse.classList.contains('show') && window.innerWidth <= 991) {
+            const focusableElements = navbarCollapse.querySelectorAll(
+                'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+            
+            if (e.shiftKey) {
+                if (document.activeElement === firstElement) {
+                    e.preventDefault();
+                    lastElement.focus();
+                }
+            } else {
+                if (document.activeElement === lastElement) {
+                    e.preventDefault();
+                    firstElement.focus();
+                }
             }
         }
     });
     
-    // Add proper ARIA attributes for accessibility
+    // Handle toggler click to update ARIA attributes
     navbarToggler.addEventListener('click', function() {
         const isExpanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !isExpanded);
@@ -174,24 +209,44 @@ function initMobileNavigation() {
         if (window.innerWidth <= 991) {
             mobileOverlay.classList.add('show');
             body.style.overflow = 'hidden'; // Prevent body scroll when menu is open
+            navbarToggler.classList.remove('collapsed'); // Remove collapsed class when opening
+            
+            // Animate menu items with stagger effect
+            const navItems = navbarCollapse.querySelectorAll('.nav-link, .btn-cta');
+            navItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-20px)';
+                setTimeout(() => {
+                    item.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, index * 100);
+            });
         }
     });
     
     navbarCollapse.addEventListener('shown.bs.collapse', function() {
         navbarToggler.setAttribute('aria-expanded', 'true');
-        navbarToggler.classList.add('collapsed');
     });
     
     navbarCollapse.addEventListener('hide.bs.collapse', function() {
         if (window.innerWidth <= 991) {
             mobileOverlay.classList.remove('show');
             body.style.overflow = ''; // Restore body scroll
+            navbarToggler.classList.add('collapsed'); // Add collapsed class when closing
+            
+            // Reset menu items styles
+            const navItems = navbarCollapse.querySelectorAll('.nav-link, .btn-cta');
+            navItems.forEach(item => {
+                item.style.transition = '';
+                item.style.opacity = '';
+                item.style.transform = '';
+            });
         }
     });
     
     navbarCollapse.addEventListener('hidden.bs.collapse', function() {
         navbarToggler.setAttribute('aria-expanded', 'false');
-        navbarToggler.classList.remove('collapsed');
     });
     
     // Handle window resize to clean up mobile-specific functionality
@@ -199,9 +254,15 @@ function initMobileNavigation() {
         if (window.innerWidth > 991) {
             mobileOverlay.classList.remove('show');
             body.style.overflow = '';
-            navbarToggler.classList.remove('collapsed');
+            // Reset toggler state on desktop
+            if (navbarCollapse.classList.contains('show')) {
+                bsCollapse.hide();
+            }
         }
     });
+    
+    // Initialize collapsed state
+    navbarToggler.classList.add('collapsed');
 }
 
 /**
