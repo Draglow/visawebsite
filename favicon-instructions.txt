@@ -1,0 +1,21 @@
+Favicon Conversion Instructions
+================================
+
+To create PNG and ICO favicon files from the SVG:
+
+1. Use online converters such as:
+   - favicon.io
+   - realfavicongenerator.net
+   - convertio.co
+
+2. Upload the favicon.svg file from this directory
+
+3. Download the generated files:
+   - favicon.png (192x192 recommended)
+   - favicon.ico (for legacy browser support)
+   - apple-touch-icon.png (180x180 for iOS)
+
+4. Place the generated files in the same directory as the HTML files
+
+The SVG favicon has been created with the hero section color scheme matching
+the website's navy blue theme (#0F1B3C to #48669A gradient).

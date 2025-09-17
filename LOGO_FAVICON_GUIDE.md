@@ -9,24 +9,26 @@ This document describes the new logo and favicon design for EthioGlobal - Ethiop
 The logo reflects EthioGlobal's core mission of helping Ethiopians find opportunities abroad through professional visa and immigration services.
 
 ### Cultural Integration
-- **Ethiopian Flag Colors**: Green (#10b981), Yellow (#FFD700), and Red (#EF4444)
-- **Ethiopian Star**: Subtle star pattern referencing the national symbol
-- **Cultural Pride**: Represents Ethiopian heritage and global aspirations
+- **Hero Section Colors**: Navy blue gradient (#0F1B3C to #48669A) matching the website's hero section
+- **Professional Theme**: Navy represents trust, stability, and professionalism
+- **Visual Harmony**: Perfect alignment with the website's primary color scheme
 
 ### Color Harmony
-The logo uses the website's premium color palette:
-- **Primary Gold**: #D4AF37 (Professional, trustworthy)
-- **Navy Blue**: #0F1B3C (Stability, reliability)
-- **Green Tones**: #10b981 (Growth, opportunity)
-- **Accent Gold**: #FFD700 (Success, achievement)
+The logo uses the website's hero section color palette:
+- **Navy Primary**: #0F1B3C (Primary hero section color)
+- **Navy Light**: #1E2A54 (Secondary hero color)
+- **Navy Medium**: #2C3E6B (Tertiary hero color) 
+- **Navy Accent**: #3A5283 (Fourth hero color)
+- **Navy Bright**: #48669A (Fifth hero color)
+- **Gold Accent**: #D4AF37 (Airplane element for contrast)
 
 ## Design Elements
 
 ### 1. Passport/Document Symbol
-- **White document** with green accents
+- **White document** with navy accents
 - **Represents**: Visa and passport services
 - **Details**: ID photo placeholder, document lines
-- **Color**: Green (#10b981) for authenticity
+- **Color**: Navy blue (#0F1B3C) for professionalism
 
 ### 2. Airplane Symbol
 - **Gold airplane** pointing towards opportunities
@@ -37,19 +39,19 @@ The logo uses the website's premium color palette:
 ### 3. Global Connection Lines
 - **Curved connecting lines** across the design
 - **Represents**: Bridges between Ethiopia and the world
-- **Colors**: Green and gold for harmony
+- **Colors**: Navy blue tones for consistency
 - **Symbolism**: Global opportunities and connections
 
-### 4. Ethiopian Star
+### 4. Star Pattern
 - **Subtle star pattern** in the background
-- **Represents**: Ethiopian national identity
-- **Color**: Light gold (#FFD700) for subtlety
+- **Represents**: Excellence and aspiration
+- **Color**: Light navy (#48669A) for subtlety
 - **Placement**: Top center for prominence
 
 ### 5. Background Gradients
-- **Circular gradient** with Ethiopian flag colors
-- **Creates**: Depth and national pride
-- **Flow**: Green → Yellow → Red → Green
+- **Circular gradient** with hero section colors
+- **Creates**: Depth and visual harmony
+- **Flow**: Navy primary → Navy light → Navy medium → Navy accent → Navy bright
 - **Opacity**: Balanced for readability
 
 ## File Structure
@@ -101,11 +103,12 @@ visa/
 4. **Variations**: Consistent across all pages
 
 ### Color Specifications
-- **Ethiopian Green**: #10b981 (RGB: 16, 185, 129)
-- **Ethiopian Yellow**: #FFD700 (RGB: 255, 215, 0)  
-- **Ethiopian Red**: #EF4444 (RGB: 239, 68, 68)
-- **Premium Gold**: #D4AF37 (RGB: 212, 175, 55)
-- **Navy Blue**: #0F1B3C (RGB: 15, 27, 60)
+- **Navy Primary**: #0F1B3C (RGB: 15, 27, 60)
+- **Navy Light**: #1E2A54 (RGB: 30, 42, 84)
+- **Navy Medium**: #2C3E6B (RGB: 44, 62, 107)
+- **Navy Accent**: #3A5283 (RGB: 58, 82, 131)
+- **Navy Bright**: #48669A (RGB: 72, 102, 154)
+- **Gold Accent**: #D4AF37 (RGB: 212, 175, 55)
 
 ### Typography Integration
 - **Brand Text**: "EthioGlobal" in Inter font
