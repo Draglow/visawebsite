@@ -216,18 +216,12 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, 
-        rgba(212, 175, 55, 0.02) 0%, 
-        rgba(212, 175, 55, 0.05) 50%, 
-        rgba(212, 175, 55, 0.02) 100%);
+    background: none;
     z-index: -1;
-    animation: navbarShimmer 8s ease-in-out infinite;
+    animation: none;
 }
 
-@keyframes navbarShimmer {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
+
 
 .navbar.scrolled {
     background: #ffffff !important;
